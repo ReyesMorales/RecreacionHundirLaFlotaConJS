@@ -1,5 +1,5 @@
 const { MAX_SHOOTS } = require("./constants");
-const { getEmptyBoard, addAllBoats, isVictory, shoot, showBoard} = require("./utils");
+const { getEmptyBoard, addAllBoats, isVictory, shoot, showBoard } = require("./utils");
 
 
 
@@ -20,13 +20,26 @@ const player2 = {
 addAllBoats(player1.ownBoard);
 addAllBoats(player2.ownBoard);
 
-
 (async () => {
+    await new Promise((resolve) => {
+        console.clear();
+        console.log("game starting");
+        let count = 3;
+        const countdown = setInterval(() => {
+            console.log(count);
+            count--;
+            if (count === 0) {
+                clearInterval(countdown);
+                resolve();
+            }
+        }, 1000);
+    })
     let gameFinished = false;
     while (gameFinished === false) {
         await new Promise((resolve) => {
             setTimeout(() => {
                 console.clear();
+                console.log('NEXT TURN');
                 shoot(player2.ownBoard, player1.rivalBoard, player1);
                 showBoard(player1.ownBoard, player1.id);
                 showBoard(player1.rivalBoard, player1.id);
@@ -41,6 +54,7 @@ addAllBoats(player2.ownBoard);
         await new Promise((resolve) => {
             setTimeout(() => {
                 console.clear();
+                console.log('NEXT TURN');
                 shoot(player1.ownBoard, player2.rivalBoard, player2);
                 showBoard(player2.ownBoard, player2.id);
                 showBoard(player2.rivalBoard, player2.id);
@@ -53,4 +67,7 @@ addAllBoats(player2.ownBoard);
             }, 1000);
         });
     }
+    showBoard(player1.ownBoard);
+    showBoard(player1.ownBoard);
 })();
+
