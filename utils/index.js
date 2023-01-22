@@ -141,6 +141,27 @@ function getRandomDirection() {
     }
     return { success: true, message: `boat ${getBoatName(boatSize)} was added.` }
 }
+
+/**
+ * Returns boat name depending on a given size
+ * @param {integer} boatSize 
+ */
+ function getBoatName(boatSize) {
+    switch (boatSize) {
+        case 1:
+            return "lancha";
+        case 2:
+            return "crucero";
+        case 3:
+            return "submarino";
+        case 4:
+            return "buque";
+        case 5:
+            return "portaaviones";
+    }
+}
+
+
 exports.getEmptyBoard = getEmptyBoard;
 exports.showBoard = showBoard;
 exports.shoot = shoot;
@@ -148,3 +169,4 @@ exports.getRandomNumber = getRandomNumber;
 exports.getRandomDirection = getRandomDirection;
 exports.checkEmptyPositions = checkEmptyPositions;
 exports.addBoat = addBoat;
+exports.getBoatName = getBoatName;
