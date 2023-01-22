@@ -51,8 +51,57 @@ function getRandomDirection() {
     }
 }
 
+/**
+ * Gets whether a space for a boat is empty or not
+ * @param {board} player's board
+ * @param {integer} x coordinate X
+ * @param {integer} y coordinate Y 
+ * @param {"up" | "down" | "left" | "right"} direction 
+ * @param {integer} boatSize size of the boat
+ */
+ function checkEmptyPositions(board, x, y, direction, boatSize) {
+    if (x < 0 || x > 9) { return false; }
+    if (y < 0 || y > 9) { return false; }
+    if (board[x][y] !== EMPTY_SPACE) { return false; }
+    switch (direction) {
+        case 'right':
+            if (y + (boatSize - 1) > 9) { return false; }
+            for (let i = y; i < y + boatSize; i++) {
+                if (board[x][i] !== EMPTY_SPACE) {
+                    return false;
+                }
+            }
+            break;
+        case "left":
+            if (y - (boatSize - 1) < 0) { return false; }
+            for (let i = y; i > y - boatSize; i--) {
+                if (board[x][i] !== EMPTY_SPACE) {
+                    return false;
+                }
+            }
+            break;
+        case "up":
+            if (x - (boatSize - 1) < 0) { return false; }
+            for (let i = x; i > x - boatSize; i--) {
+                if (board[i][y] !== EMPTY_SPACE) {
+                    return false;
+                }
+            }
+            break;
+        case "down":
+            if (x + (boatSize - 1) > 9) { return false; }
+            for (let i = x; i < x + boatSize; i++) {
+                if (board[i][y] !== EMPTY_SPACE) {
+                    return false;
+                }
+            }
+    }
+    return true;
+}
+
 exports.getEmptyBoard = getEmptyBoard;
 exports.showBoard = showBoard;
 exports.shoot = shoot;
 exports.getRandomNumber = getRandomNumber;
 exports.getRandomDirection = getRandomDirection;
+exports.checkEmptyPositions = checkEmptyPositions;
