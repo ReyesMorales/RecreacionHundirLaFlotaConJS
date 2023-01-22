@@ -1,3 +1,5 @@
+const { BOAT_SPACE, EMPTY_SPACE, HIT_SPACE, WATER_SPACE } = require('../constants');
+
 function getEmptyBoard() {
     let arr = [];
     for (let i = 0; i < 10; i++) {
@@ -14,10 +16,11 @@ function showBoard(board, player) {
     console.table(board);
 }
 
-function shoot(targetBoard, trackBoard, playerShootCounter) {
+function shoot(targetBoard, trackBoard, player) {
     let x = getRandomNumber(9);
     let y = getRandomNumber(9);
-    playerShootCounter++;;
+    player.shootsCounter--;
+    console.log(`Remaining shoots: ${player.shootsCounter}`);
     while(trackBoard[x][y] !== EMPTY_SPACE) {
         x = getRandomNumber(9);
         y = getRandomNumber(9);
@@ -25,11 +28,13 @@ function shoot(targetBoard, trackBoard, playerShootCounter) {
    
     if (targetBoard[x][y] === BOAT_SPACE) {
         trackBoard[x][y] = HIT_SPACE;
-        return "Hit";
+        targetBoard[x][y] = HIT_SPACE;
+        console.log(`Shoot to ${x}, ${y}: HIT`);
     } else {
         trackBoard[x][y] = WATER_SPACE;
-        return "Water";
+        console.log(`Shoot to ${x}, ${y}: WATER`);
     }
+    
 }
 
 function getRandomNumber(maxNumber) {
