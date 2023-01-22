@@ -37,7 +37,22 @@ function getRandomNumber(maxNumber) {
     return randomNumber;
 }
 
+function getRandomDirection() {
+    const randomNumber0_3 = getRandomNumber(3);
+    switch (randomNumber0_3) {
+        case 0:
+            return "up";
+        case 1:
+            return "down";
+        case 2:
+            return "left";
+        case 3:
+            return "right";
+    }
+}
+
 exports.getEmptyBoard = getEmptyBoard;
 exports.showBoard = showBoard;
 exports.shoot = shoot;
 exports.getRandomNumber = getRandomNumber;
+exports.getRandomDirection = getRandomDirection;
