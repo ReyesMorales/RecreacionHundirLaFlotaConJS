@@ -174,6 +174,23 @@ function addAllBoats(board) {
     addBoat(board, 1); // add lancha
 }
 
+/**
+ * returns whether active player has won or not
+ * @param {[]} board 
+ * @param {"player1" | "player2"} activePlayer
+ */
+ function isVictory(board) {
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            if(board[i][j] === BOAT_SPACE) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+
 
 exports.getEmptyBoard = getEmptyBoard;
 exports.showBoard = showBoard;
@@ -184,3 +201,4 @@ exports.checkEmptyPositions = checkEmptyPositions;
 exports.addBoat = addBoat;
 exports.getBoatName = getBoatName;
 exports.addAllBoats = addAllBoats;
+exports.isVictory = isVictory;
