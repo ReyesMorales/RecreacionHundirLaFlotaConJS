@@ -161,6 +161,19 @@ function getRandomDirection() {
     }
 }
 
+function addAllBoats(board) {
+    addBoat(board, 5); // add portaaviones
+    addBoat(board, 4); // add buque
+    addBoat(board, 3); // add submarino
+    addBoat(board, 3); // add submarino
+    addBoat(board, 2); // add crucero
+    addBoat(board, 2); // add crucero
+    addBoat(board, 2); // add crucero
+    addBoat(board, 1); // add lancha
+    addBoat(board, 1); // add lancha
+    addBoat(board, 1); // add lancha
+}
+
 
 exports.getEmptyBoard = getEmptyBoard;
 exports.showBoard = showBoard;
@@ -170,3 +183,4 @@ exports.getRandomDirection = getRandomDirection;
 exports.checkEmptyPositions = checkEmptyPositions;
 exports.addBoat = addBoat;
 exports.getBoatName = getBoatName;
+exports.addAllBoats = addAllBoats;
