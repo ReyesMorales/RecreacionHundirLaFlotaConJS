@@ -14,10 +14,10 @@ function showBoard(board, player) {
     console.table(board);
 }
 
-function shoot(targetBoard, trackBoard, playerShoot) {
+function shoot(targetBoard, trackBoard, playerShootCounter) {
     let x = getRandomNumber(9);
     let y = getRandomNumber(9);
-    playerShoot.counter++;;
+    playerShootCounter++;;
     while(trackBoard[x][y] !== EMPTY_SPACE) {
         x = getRandomNumber(9);
         y = getRandomNumber(9);
