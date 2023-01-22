@@ -32,6 +32,12 @@ function shoot(targetBoard, trackBoard, playerShoot) {
     }
 }
 
+function getRandomNumber(maxNumber) {
+    const randomNumber = Math.round(Math.random() * maxNumber);
+    return randomNumber;
+}
+
 exports.getEmptyBoard = getEmptyBoard;
 exports.showBoard = showBoard;
 exports.shoot = shoot;
+exports.getRandomNumber = getRandomNumber;
