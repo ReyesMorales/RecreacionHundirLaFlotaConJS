@@ -9,5 +9,12 @@ function getEmptyBoard() {
     return arr;
 }
 
-exports.getEmptyBoard = getEmptyBoard;
+function showBoard(board, player) {
+    console.log('+++++++' + player + '++++++++++++++++++');
+    console.table(board);
+}
 
+
+
+exports.getEmptyBoard = getEmptyBoard;
+exports.showBoard = showBoard;
