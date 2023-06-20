@@ -68,6 +68,8 @@ addAllBoats(player2.ownBoard);
   });
 
   let gameFinished = false;
+  let winner = null;
+
   while (gameFinished === false) {
     await new Promise((resolve) => {
       setTimeout(() => {
