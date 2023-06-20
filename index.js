@@ -72,7 +72,7 @@ addAllBoats(player2.ownBoard);
     await new Promise((resolve) => {
       setTimeout(() => {
         console.clear();
-        console.log("NEXT TURN");
+        console.log("PLAYER 1 TURNS");
         shoot(player2.ownBoard, player1.rivalBoard, player1);
         showBoard(player1.ownBoard);
         showBoard(player1.rivalBoard);
@@ -89,7 +89,7 @@ addAllBoats(player2.ownBoard);
     await new Promise((resolve) => {
       setTimeout(() => {
         console.clear();
-        console.log("NEXT TURN");
+        console.log("PLAYER 2 TURNS");
         shoot(player1.ownBoard, player2.rivalBoard, player2);
         showBoard(player2.ownBoard);
         showBoard(player2.rivalBoard);
