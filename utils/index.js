@@ -11,8 +11,7 @@ function getEmptyBoard() {
     return arr;
 }
 
-function showBoard(board, player) {
-    console.log('+++++++' + player + '++++++++++++++++++');
+function showBoard(board) {
     console.table(board);
 }
 
