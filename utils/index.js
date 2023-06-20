@@ -182,9 +182,9 @@ function addAllBoats(board) {
 /**
  * returns whether active player has won or not
  * @param {[]} board 
- * @param {"player1" | "player2"} activePlayer
+ * @returns {boolean}
  */
- function isVictory(board) {
+ function isVictory(board,) {
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
             if(board[i][j] === BOAT_SPACE) {
