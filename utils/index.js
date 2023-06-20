@@ -31,6 +31,7 @@ function shoot(targetBoard, trackBoard, player) {
         console.log(`Shoot to ${x}, ${y}: HIT`);
     } else {
         trackBoard[x][y] = WATER_SPACE;
+        targetBoard[x][y] = WATER_SPACE;
         console.log(`Shoot to ${x}, ${y}: WATER`);
     }
     
