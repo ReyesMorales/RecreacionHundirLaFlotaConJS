@@ -39,6 +39,34 @@ addAllBoats(player2.ownBoard);
     }, 1000);
   });
 
+  //Show Player 1 Board with boats
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      console.clear();
+      console.log("Player 1 Board:");
+      showBoard(player1.ownBoard);
+      resolve();
+    }, 5000);
+  });
+
+   //Show Player 2 Board with boats
+   await new Promise((resolve) => {
+    setTimeout(() => {
+      console.clear();
+      console.log("Player 2 Board:");
+      showBoard(player2.ownBoard);
+      resolve();
+    }, 5000);
+  });
+
+  //Show rounds starting
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Rounds starting");
+      resolve();
+    }, 5000);
+  });
+
   let gameFinished = false;
   while (gameFinished === false) {
     await new Promise((resolve) => {
