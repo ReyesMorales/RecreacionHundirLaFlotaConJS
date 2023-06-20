@@ -74,7 +74,9 @@ addAllBoats(player2.ownBoard);
         console.clear();
         console.log("PLAYER 1 TURNS");
         shoot(player2.ownBoard, player1.rivalBoard, player1);
+        console.log("Own board");
         showBoard(player1.ownBoard);
+        console.log("Rival board");
         showBoard(player1.rivalBoard);
         if (player1.shootsCounter === 0) {
           gameFinished = true;
@@ -91,7 +93,9 @@ addAllBoats(player2.ownBoard);
         console.clear();
         console.log("PLAYER 2 TURNS");
         shoot(player1.ownBoard, player2.rivalBoard, player2);
+        console.log("Own board");
         showBoard(player2.ownBoard);
+        console.log("Rival board");
         showBoard(player2.rivalBoard);
         if (player2.shootsCounter === 0) {
           gameFinished = true;
