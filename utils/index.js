@@ -118,7 +118,6 @@ function getRandomDirection() {
     let direction = getRandomDirection();
 
     while (checkEmptyPositions(board, x, y, direction, boatSize) === false) {
-        console.log('Position occupied, try again');
         x = getRandomNumber(9);
         y = getRandomNumber(9);
         direction = getRandomDirection();
