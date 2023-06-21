@@ -27,7 +27,7 @@ addAllBoats(player2.ownBoard);
 (async () => {
   await new Promise((resolve) => {
     console.clear();
-    console.log("Placing the boats");
+    console.log("Game starting, placing the boats...");
     let count = 3;
     const countdown = setInterval(() => {
       console.log(count);
