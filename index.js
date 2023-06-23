@@ -7,6 +7,7 @@ const {
   showBoard,
 } = require("./utils");
 
+// Create player 1
 const player1 = {
   shootsCounter: MAX_SHOOTS,
   ownBoard: getEmptyBoard(),
@@ -14,6 +15,7 @@ const player1 = {
   id: "Player 1",
 };
 
+// Create player 2
 const player2 = {
   shootsCounter: MAX_SHOOTS,
   ownBoard: getEmptyBoard(),
@@ -21,10 +23,13 @@ const player2 = {
   id: "Player 2",
 };
 
+// Add boats to player 1's and player 2's boards
 addAllBoats(player1.ownBoard);
 addAllBoats(player2.ownBoard);
 
+// Start the game
 (async () => {
+  // Start the game by placing the boats
   await new Promise((resolve) => {
     console.clear();
     console.log("Game starting, placing the boats...");
@@ -39,7 +44,7 @@ addAllBoats(player2.ownBoard);
     }, 1000);
   });
 
-  //Show Player 1 Board with boats
+  // Show Player 1's board with boats
   await new Promise((resolve) => {
     setTimeout(() => {
       console.clear();
@@ -49,8 +54,8 @@ addAllBoats(player2.ownBoard);
     }, 5000);
   });
 
-   //Show Player 2 Board with boats
-   await new Promise((resolve) => {
+  // Show Player 2's board with boats
+  await new Promise((resolve) => {
     setTimeout(() => {
       console.clear();
       console.log("Player 2 Board:");
@@ -59,7 +64,7 @@ addAllBoats(player2.ownBoard);
     }, 5000);
   });
 
-  //Show rounds starting
+  // Start the rounds
   await new Promise((resolve) => {
     setTimeout(() => {
       console.log("Rounds starting");
@@ -70,7 +75,9 @@ addAllBoats(player2.ownBoard);
   let gameFinished = false;
   let winner = null;
 
+  // Game loop
   while (!gameFinished) {
+    // Player 1's turn
     await new Promise((resolve) => {
       setTimeout(() => {
         console.clear();
@@ -88,6 +95,7 @@ addAllBoats(player2.ownBoard);
       }, 1000);
     });
 
+    // Player 2's turn
     if (!gameFinished) {
       await new Promise((resolve) => {
         setTimeout(() => {
@@ -108,6 +116,7 @@ addAllBoats(player2.ownBoard);
     }
   }
 
+  // Display the winner and final boards
   if (winner) {
     await new Promise((resolve) => {
       setTimeout(() => {
