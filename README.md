@@ -4,17 +4,24 @@ This project is a command-line implementation of the Battleship game. Two player
 
 ## Installation
 1. Clone the repository:
-`git clone https://github.com/ReyesMorales/practicaHundirLaFlota.git`
+
+```sh
+git clone https://github.com/ReyesMorales/practicaHundirLaFlota.git
+```
 
 2. Navigate to the project directory:
 
-`cd practicaHundirLaFlota`
+```sh
+cd practicaHundirLaFlota
+```
 
 ## Usage
 
 To start the game, run the following command:
 
-`node index.js`
+```sh
+node index.js
+```
 
 The game will begin by placing the boats on each player's board. The boards will be displayed after a countdown. Then, the rounds will start, and players will take turns shooting at each other's boards until one player wins. The game will display the boards and the winner's name at the end.
 
